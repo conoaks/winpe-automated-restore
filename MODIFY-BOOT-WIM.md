@@ -339,6 +339,27 @@ Determine the Ventoy data-partition drive letter using File Explorer or:
 Get-Volume
 ```
 
+Before booting a standalone WIM, install Ventoy's WIMBoot plugin:
+
+1. Download `ventoy_wimboot.img` from the [Ventoy WIMBoot releases](https://github.com/ventoy/wimiso/releases).
+2. Open Ventoy's large data partition—the same partition that stores ISO and WIM files.
+3. Create a directory named `ventoy` in the root if it does not already exist.
+4. Copy the downloaded file into that directory.
+
+The resulting path must be:
+
+```text
+/ventoy/ventoy_wimboot.img
+```
+
+On a Ventoy drive mounted as `V:`, the Windows path is:
+
+```text
+V:\ventoy\ventoy_wimboot.img
+```
+
+Do not place the plugin on Ventoy's small 32 MB `VTOYEFI` partition. It belongs on the main data partition with the ISO and WIM files. The `ventoy` directory is not created by default, so create it manually when necessary.
+
 If the data partition is `V:`, copy the WIM with:
 
 ```powershell
@@ -349,6 +370,8 @@ Copy-Item `
 ```
 
 Do not assume Ventoy will always use `V:`.
+
+Ventoy documents this requirement in its [official WIMBoot plugin instructions](https://www.ventoy.net/en/plugin_wimboot.html).
 
 Place one or more `.mrimg` files anywhere on storage visible to Windows PE. They do not need to be beside the WIM or on a specially named volume.
 

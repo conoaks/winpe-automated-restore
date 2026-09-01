@@ -118,13 +118,18 @@ dism /Unmount-Wim /MountDir:"C:\WimMount" /Discard
 ## Boot with Ventoy
 
 1. Install Ventoy on a USB drive.
-2. Copy the completed WIM onto the Ventoy data partition.
-3. Copy one or more `.mrimg` backup files onto any storage device that Windows PE can access.
-4. Boot the target computer from the Ventoy USB drive.
-5. Select the recovery WIM from the Ventoy menu.
-6. If prompted, select the desired backup filename.
+2. Download `ventoy_wimboot.img` from the [Ventoy WIMBoot releases](https://github.com/ventoy/wimiso/releases).
+3. On Ventoy's large data partition—the same partition that stores ISO and WIM files—create a folder named `ventoy` if it does not already exist.
+4. Copy the plugin to `/ventoy/ventoy_wimboot.img` on that partition. Do not put it on the small 32 MB `VTOYEFI` partition.
+5. Copy the completed WIM onto the Ventoy data partition.
+6. Copy one or more `.mrimg` backup files onto any storage device that Windows PE can access.
+7. Boot the target computer from the Ventoy USB drive.
+8. Select the recovery WIM from the Ventoy menu.
+9. If prompted, select the desired backup filename.
 
 The backup image does not need to be stored beside the WIM and does not require a particular drive letter or volume label.
+
+Ventoy requires the WIMBoot plugin to boot standalone `.wim` files. See Ventoy's [official WIMBoot plugin instructions](https://www.ventoy.net/en/plugin_wimboot.html).
 
 ## Important limitations
 
