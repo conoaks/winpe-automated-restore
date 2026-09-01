@@ -2,6 +2,8 @@
 
 This guide starts with a default Macrium Reflect Windows PE or Windows RE rescue image and modifies its `boot.wim` so it automatically finds `.mrimg` backups and restores the selected image to Disk 0.
 
+The project was developed and tested with **Macrium Reflect 8 Free Edition**. This edition is discontinued and Reflect 8 is end-of-life. Other Macrium editions or versions may use different files, executable paths, licensing terms, or startup behavior and have not been validated by this guide.
+
 The finished WIM is intended to boot from Ventoy and makes no assumptions about USB labels, backup-drive letters, or folder layouts.
 
 > [!CAUTION]
@@ -45,6 +47,10 @@ X:\Program Files\Macrium\DiskRestore.exe
 ```
 
 This project does not provide or license Macrium Reflect, Windows PE, or Windows RE binaries.
+
+Free-of-charge and end-of-life software is not automatically open source or freely redistributable. Do not publish the generated Macrium rescue WIM unless you have explicit permission covering every bundled component. Distribute the scripts and guide, and require users to create their own rescue media locally.
+
+Macrium no longer provides an official download for Reflect 8 Free Edition. Unofficial archived copies may exist on third-party services, but this project does not link to, endorse, redistribute, or verify those downloads. Users must supply their own legitimately obtained installer or rescue media and are responsible for confirming its authenticity, integrity, licensing, and safety.
 
 ## Generic working paths
 

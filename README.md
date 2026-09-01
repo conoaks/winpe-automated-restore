@@ -2,6 +2,8 @@
 
 A Windows PE recovery environment that automatically finds Macrium Reflect backup images (`.mrimg`) and restores the selected image to **Disk 0**. The WIM is designed to boot from [Ventoy](https://www.ventoy.net/) without relying on a particular USB label, drive letter, or folder layout.
 
+This project was developed and tested using **Macrium Reflect 8 Free Edition**. That edition is discontinued and Reflect 8 is end-of-life, so it should be treated as the tested reference environment rather than bundled with this repository.
+
 > [!CAUTION]
 > This environment overwrites **Disk 0 without a final confirmation prompt**. Boot it only when you intend to erase and restore Disk 0. Selecting an image starts the restore immediately.
 
@@ -30,6 +32,10 @@ A Windows PE recovery environment that automatically finds Macrium Reflect backu
 - One or more valid `.mrimg` backup images on storage visible to Windows PE.
 
 This repository does not grant a license to redistribute Macrium Reflect, Windows PE, or other third-party binaries. Confirm that you have the necessary rights before publishing or distributing a completed WIM.
+
+Macrium Reflect 8 Free Edition being free of charge and end-of-life does not make its rescue WIM open source or grant redistribution rights. Users must create the rescue media locally from their own legitimate installation.
+
+Macrium no longer provides an official download for Reflect 8 Free Edition. Unofficial archived copies may exist on third-party services, but this project does not link to, endorse, redistribute, or verify those downloads. Users must supply their own legitimately obtained installer or rescue media and are responsible for confirming its authenticity, integrity, licensing, and safety.
 
 For complete step-by-step servicing instructions, see [How to Add `auto_restore.cmd` to a Windows PE `boot.wim`](MODIFY-BOOT-WIM.md).
 
